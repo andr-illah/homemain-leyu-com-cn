@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>足球直播 · 简明观赛指南与信息索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #fafafc;
+            color: #1e1e2a;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            padding: 2.4rem 1.2rem 3.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-wrapper {
+            max-width: 720px;
+            width: 100%;
+        }
+        /* header / intro zone */
+        .site-identity {
+            margin-bottom: 3.2rem;
+        }
+        .site-identity h1 {
+            font-weight: 550;
+            font-size: 2.2rem;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            color: #0b0b15;
+        }
+        .site-identity .sub {
+            margin-top: 0.4rem;
+            font-size: 0.95rem;
+            color: #595973;
+            border-left: 3px solid #d4d4e2;
+            padding-left: 0.9rem;
+        }
+        /* 目录感卡片网格，但不用太多卡片，保持信息密度 */
+        .index-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+            margin: 2rem 0 2.8rem;
+        }
+        .card-section {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eff0f5;
+        }
+        .card-section h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            color: #17172b;
+            margin-bottom: 1.1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid #ecedf2;
+        }
+        .card-section h2 .badge {
+            display: inline-block;
+            background: #ecedf2;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            color: #3c3c56;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        .card-section p {
+            font-size: 0.95rem;
+            color: #2b2b40;
+            margin-bottom: 0.6rem;
+        }
+        .card-section p:last-of-type {
+            margin-bottom: 0;
+        }
+        .card-section ul {
+            list-style: none;
+            margin: 0.5rem 0 0.2rem;
+        }
+        .card-section ul li {
+            font-size: 0.92rem;
+            padding: 0.3rem 0 0.2rem 1.3rem;
+            position: relative;
+            color: #313148;
+        }
+        .card-section ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #8484a0;
+            font-weight: 700;
+        }
+        .inline-link {
+            color: #1f3a6b;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #cdd6e8;
+            transition: border-color 0.15s;
+        }
+        .inline-link:hover {
+            border-bottom-color: #1f3a6b;
+        }
+        .note-box {
+            background: #f4f5fa;
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            margin: 1.2rem 0 0.4rem;
+            font-size: 0.9rem;
+            border-left: 3px solid #a9adc0;
+        }
+        .note-box strong {
+            color: #10101f;
+            font-weight: 600;
+        }
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid #eaeaf0;
+            padding-bottom: 0.8rem;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .faq-q {
+            font-weight: 550;
+            font-size: 0.93rem;
+            color: #151529;
+            margin-bottom: 0.15rem;
+        }
+        .faq-a {
+            font-size: 0.88rem;
+            color: #43435c;
+        }
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #6b6b85;
+            text-align: center;
+            border-top: 1px solid #e4e4ed;
+            padding-top: 2rem;
+            letter-spacing: 0.2px;
+        }
+        .footer-note a {
+            color: #2b2b4a;
+            text-decoration: none;
+            border-bottom: 1px dotted #b7b7cc;
+        }
+        .footer-note a:hover {
+            border-bottom-style: solid;
+        }
+        @media (max-width: 500px) {
+            body {
+                padding: 1.6rem 0.8rem 2.4rem;
+            }
+            .card-section {
+                padding: 1.4rem 1.2rem 1.6rem;
+                border-radius: 16px;
+            }
+            .site-identity h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="site-identity">
+            <h1>足球直播 · 简明索引</h1>
+            <div class="sub">从观赛方式到信息筛选，一份精简的知识库入口</div>
+        </div>
+
+        <div class="index-grid">
+            <!-- 介绍 + 定位 -->
+            <div class="card-section">
+                <h2>定位与指南<span class="badge">方向</span></h2>
+                <p>对于日常关注赛事的观众，实时获取清晰、低延迟的直播源是核心诉求。不同于泛体育聚合，<a href="https://zh-zuqiuzhibo.com" class="inline-link">足球直播</a> 作为一种信息聚合指向，更强调赛程覆盖与访问效率——尤其在周末密集赛段，准确的入口能显著减少检索时间。</p>
+                <p>本页作为静态知识索引，整理与观赛体验相关的几个维度：直播源特征、访问环境、以及常见认知误区。</p>
+            </div>
+
+            <!-- 特点 / 关键信息区 -->
+            <div class="card-section">
+                <h2>直播源特征简述</h2>
+                <ul>
+                    <li>多链路备选：主流赛事通常提供不少于三条独立播放源，降低单点故障影响。</li>
+                    <li>清晰度分层：从 480p 到 1080p，部分焦点战开放 4K 试验频道（需带宽 > 20Mbps）。</li>
+                    <li>延迟差异：不同源延迟约 20s–60s，建议以画面下方计时器为参考，而非社交平台文字直播。</li>
+                    <li>地域适配：部分海外版权场次需切换至对应区域解析节点，可尝试刷新或更换入口。</li>
+                </ul>
+                <div class="note-box">
+                    <strong>提醒：</strong> 直播流地址具有时效性，赛前 15 分钟至赛后 30 分钟为最佳访问窗口。如遇解析失败，优先检查网络环境或尝试备用链路。
+                </div>
+            </div>
+
+            <!-- 提示 + 场景 合并卡片 -->
+            <div class="card-section">
+                <h2>访问提示与场景</h2>
+                <p><strong>· 观赛前准备</strong><br>关闭后台占用带宽的应用（如云同步、4K 视频播放），无线网络下建议使用 5GHz 频段。移动端用户可开启飞行模式再关闭，重置网络堆栈。</p>
+                <p><strong>· 多赛事并行</strong><br>同一时间多场焦点战同时进行时，可借助浏览器的「画中画」或分屏功能（桌面端），或使用第二设备辅助监控。使用 <a href="https://zh-zuqiuzhibo.com" class="inline-link">足球直播</a> 页面作为快速切换的中转站，无需记忆多个地址。</p>
+                <p><strong>· 赛后回看</strong><br>部分直播源在比赛结束后保留 2–4 小时回放片段，但集锦与全场录像建议通过官方联赛平台获取，直播页面主要服务实时观看。</p>
+            </div>
+
+            <!-- FAQ 摘要 / 相关信息 -->
+            <div class="card-section">
+                <h2>常见疑问摘要</h2>
+                <div class="faq-mini">
+                    <div class="faq-item">
+                        <div class="faq-q">⚙️ 页面无法加载或一直转圈？</div>
+                        <div class="faq-a">首先确认域名可解析 (ping zh-zuqiuzhibo.com)，部分地区 DNS 可能缓存旧 IP，可尝试更换为 1.1.1.1 或 223.5.5.5。若仍异常，多数是节点临时波动，等待 3–5 分钟刷新。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">📱 移动端自动跳转或布局异常？</div>
+                        <div class="faq-a">本索引页面采用响应式设计，但直播源页面可能存在独立移动版。若遇到变形，可尝试在浏览器菜单中请求「桌面版网站」。部分嵌入播放器需启用 JavaScript。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">🔒 提示“不安全内容”或证书警告？</div>
+                        <div class="faq-a">直播源引用自不同第三方，部分使用 http 协议。主流浏览器会标记混合内容。建议在地址栏左侧点击「🔒」图标，将“不安全内容”设为“允许”（仅限该网站），或使用无痕模式测试。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <p>本页为静态知识索引，不存储、转播任何音视频流。所有直播服务由第三方平台提供。<br>
+            实际观赛体验可能因网络、设备、版权等因素而异。建议通过 <a href="https://zh-zuqiuzhibo.com">足球直播</a> 页面获取最新链路与赛程信息。</p>
+            <p style="margin-top: 1rem; color: #8d8da6;">信息索引 · 内容定期复核 &nbsp;|&nbsp; 版本 2025.04</p>
+        </div>
+    </div>
+</body>
+</html>
