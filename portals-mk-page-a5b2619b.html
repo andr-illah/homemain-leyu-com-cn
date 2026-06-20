@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常查询与延伸阅读 · MK体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            background: #f8f4ed;
+            color: #2b2823;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin: 0.8rem 0 0.2rem;
+            border-left: 4px solid #b89b7a;
+            padding-left: 1rem;
+            color: #3d352c;
+        }
+        .subhead {
+            font-size: 0.95rem;
+            color: #7c6e5c;
+            margin: 0 0 2rem 0.2rem;
+            font-style: italic;
+            font-family: 'Avenir', 'Helvetica Neue', sans-serif;
+        }
+        .hero-box {
+            background: #efe9df;
+            padding: 1.8rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .hero-box p {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+        .hero-box p:last-child {
+            margin-bottom: 0;
+        }
+        .highlight-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0 2.2rem;
+        }
+        .highlight-item {
+            flex: 1 1 200px;
+            background: #ffffffd9;
+            padding: 1.4rem 1.2rem;
+            border-radius: 14px;
+            border: 1px solid #e2d7c9;
+        }
+        .highlight-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #5f5240;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.5px;
+        }
+        .highlight-item p {
+            font-size: 0.9rem;
+            color: #4b4238;
+        }
+        .quote-block {
+            background: #e9e1d5;
+            padding: 1.2rem 1.8rem;
+            border-left: 5px solid #b89b7a;
+            margin: 1.8rem 0;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.95rem;
+        }
+        .scenario-list {
+            margin: 2rem 0 1.8rem;
+        }
+        .scenario-list h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #4e4438;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #d0c4b4;
+            padding-bottom: 0.3rem;
+        }
+        .scenario-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .scenario-list li {
+            padding: 0.5rem 0 0.5rem 1.6rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        .scenario-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.3rem;
+            color: #b89b7a;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        .faq-mini {
+            background: #f0eadf;
+            padding: 1.4rem 1.8rem;
+            border-radius: 14px;
+            margin: 2rem 0 1.5rem;
+        }
+        .faq-mini details {
+            margin-bottom: 0.6rem;
+        }
+        .faq-mini summary {
+            font-weight: 500;
+            color: #3d352c;
+            cursor: pointer;
+            font-size: 0.95rem;
+            padding: 0.1rem 0;
+        }
+        .faq-mini summary:hover {
+            color: #7f6b51;
+        }
+        .faq-mini .answer {
+            margin: 0.4rem 0 0.6rem 0.8rem;
+            font-size: 0.9rem;
+            color: #50483e;
+            border-left: 2px solid #cfc2b0;
+            padding-left: 1rem;
+        }
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #d8ccbb;
+            font-size: 0.85rem;
+            color: #6e6254;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .footer-note a {
+            color: #7a6b58;
+            text-decoration: none;
+            border-bottom: 1px dotted #b89b7a;
+            font-weight: normal;
+            transition: border 0.2s;
+        }
+        .footer-note a:hover {
+            border-bottom-color: #4e3f2f;
+            color: #4e3f2f;
+        }
+        .inline-link {
+            color: #7a6b58;
+            text-decoration: none;
+            border-bottom: 1px dotted #b89b7a;
+            font-weight: normal;
+            transition: border 0.2s;
+        }
+        .inline-link:hover {
+            border-bottom-color: #4e3f2f;
+            color: #4e3f2f;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            h1 {
+                font-size: 1.4rem;
+                padding-left: 0.6rem;
+            }
+            .hero-box {
+                padding: 1.2rem 1rem;
+            }
+            .highlight-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .footer-note {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MK体育 · 日常查询与对照说明</h1>
+    <div class="subhead">一份围绕查询、延伸与场景的整理页面</div>
+
+    <div class="hero-box">
+        <p><strong>MK体育</strong> 是一个面向日常体育信息查阅的聚合平台。它更像是一扇可自行推开的大门——你可以在里面查找比赛进程、对照数据、延伸阅读相关的球队与赛事背景。它不兜售某种观点，只提供一种检索体育内容的途径。</p>
+        <p>本页从三个角度组织：<strong>摘要</strong>（它是什么）、<strong>亮点与使用建议</strong>（日常怎么用）、<strong>可信但克制的访问说明</strong>（访问时的注意事项）。希望帮你快速判断它是否适合你的信息习惯。</p>
+    </div>
+
+    <div class="highlight-grid">
+        <div class="highlight-item">
+            <h3>内容摘要</h3>
+            <p>覆盖主流赛事、联赛与队伍的基础信息，方便快速对照赛程与基础数据。整体以信息罗列为主，不提供深度分析或独家解读。</p>
+        </div>
+        <div class="highlight-item">
+            <h3>日常使用亮点</h3>
+            <p>页面结构清晰，条目与分类简洁。适合在赛事密集期快速查询赛果、时间、对阵，或进行不同联赛之间的基础对比。</p>
+        </div>
+        <div class="highlight-item">
+            <h3>适合延伸阅读</h3>
+            <p>如果你正在追踪某支球队或某轮赛事，<a href="https://portals-mk.com" class="inline-link">MK体育</a> 可以作为一个起点，帮你把零散信息归拢到同一页面，再结合其他资料做进一步梳理。</p>
+        </div>
+    </div>
+
+    <div class="quote-block">
+        <p><strong>使用建议：</strong> 打开后建议先浏览左侧导航或分类标签，定位到感兴趣的联赛或赛季。查询时留意更新时间，部分页面可能有一定信息滞后。把它当作一个备忘性质的辅助工具，而非唯一信息源。</p>
+    </div>
+
+    <div class="scenario-list">
+        <h2>常见查询场景</h2>
+        <ul>
+            <li><strong>赛程对照：</strong> 当你在不同平台看到矛盾的开赛时间时，可以在 <strong>MK体育</strong> 快速核对比赛日与对阵，减少遗漏。</li>
+            <li><strong>联赛数据对比：</strong> 同时关注英超、西甲、德甲等联赛时，页面会并列展示积分、进球等基础数据，省去频繁切换标签页的麻烦。</li>
+            <li><strong>历史赛季延伸：</strong> 查找某支球队在过往赛季的排名或交锋记录时，可以通过平台的赛季选择功能逐步翻查，适合做简单的回顾。</li>
+            <li><strong>赛前快速预习：</strong> 在观看比赛前，利用几分钟扫一眼双方近况、关键球员数据，让观赛更有脉络。</li>
+        </ul>
+    </div>
+
+    <div class="faq-mini">
+        <h2 style="font-size:1.1rem; font-weight:500; margin-bottom:0.8rem; color:#4e4438;">FAQ 摘要</h2>
+        <details>
+            <summary>页面的数据更新及时吗？</summary>
+            <div class="answer">平台会跟进主流赛事的主要数据，但具体更新频率未明确公开。建议以官方赛事机构或俱乐部公告为最终依据，本平台可作为参考补充。</div>
+        </details>
+        <details>
+            <summary>是否需要注册或付费？</summary>
+            <div class="answer">根据现有界面，基础浏览与查询功能无需注册或付费。部分高级筛选或历史数据导出可能涉及账户设置，请以实际页面提示为准。</div>
+        </details>
+        <details>
+            <summary>移动端体验如何？</summary>
+            <div class="answer">页面针对手机屏幕做了基本适配，但表格较多时建议横屏或使用平板查看。部分交互按钮在窄屏下可能稍显密集，可尝试缩放调整。</div>
+        </details>
+        <details>
+            <summary>可以转载或引用这里的数据吗？</summary>
+            <div class="answer">建议仅用于个人参考。如需公开发布或商业使用，请直接阅读 <strong>MK体育</strong> 的条款或联系平台方确认授权范围。</div>
+        </details>
+    </div>
+
+    <div class="footer-note">
+        <span>整理说明 · 内容基于公开界面梳理，仅供参考。</span>
+        <span>关于平台：<a href="https://portals-mk.com">MK体育</a></span>
+    </div>
+
+</body>
+</html>
