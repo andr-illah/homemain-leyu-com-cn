@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PG娱乐 — 信息查询与参考页面</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f9fc;
+      color: #1a2e3d;
+      line-height: 1.6;
+      padding: 0 1.5rem 2.5rem;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+      border-bottom: 2px solid #c7e2ed;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b394b;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 span {
+      color: #1d7b8c;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+      color: #2f4a5a;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: #d5eaf2;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #145f6b;
+      font-weight: 500;
+    }
+
+    /* ---------- grid cards ---------- */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin: 3rem 0 1.8rem;
+      padding-left: 0.2rem;
+      border-left: 5px solid #1d7b8c;
+      padding-left: 1rem;
+      color: #0b394b;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .grid-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem 1.3rem;
+      box-shadow: 0 4px 12px rgba(0, 50, 60, 0.05);
+      border: 1px solid #d9e8ef;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 22px rgba(0, 70, 90, 0.08);
+      border-color: #aad0dd;
+    }
+
+    .card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #124e5c;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #2d4b5b;
+    }
+
+    .card .badge {
+      display: inline-block;
+      background: #e1f1f7;
+      color: #136470;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      margin-top: 0.7rem;
+    }
+
+    /* ---------- 说明/对比区 ---------- */
+    .explain-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 2.5rem 0 2rem;
+      background: #ffffffd9;
+      padding: 2rem 1.8rem;
+      border-radius: 28px;
+      border: 1px solid #cde1ea;
+    }
+
+    @media (min-width: 780px) {
+      .explain-block {
+        flex-direction: row;
+        gap: 3rem;
+      }
+    }
+
+    .explain-item {
+      flex: 1;
+    }
+
+    .explain-item h4 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #094958;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .explain-item ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+
+    .explain-item li {
+      padding: 0.25rem 0;
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+      font-size: 0.95rem;
+      color: #1e3e4d;
+    }
+
+    .explain-item li::before {
+      content: "▹";
+      color: #1d7b8c;
+      font-weight: bold;
+    }
+
+    /* ---------- FAQ 摘要 ---------- */
+    .faq-mini {
+      margin: 2.8rem 0 2rem;
+    }
+
+    .faq-mini details {
+      background: white;
+      border: 1px solid #d2e3ec;
+      border-radius: 18px;
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 1rem;
+      transition: background 0.15s;
+    }
+
+    .faq-mini details[open] {
+      background: #f7fcff;
+    }
+
+    .faq-mini summary {
+      font-weight: 600;
+      cursor: pointer;
+      color: #094958;
+      padding: 0.3rem 0;
+      font-size: 1rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .faq-mini summary::after {
+      content: "+";
+      font-size: 1.3rem;
+      color: #1d7b8c;
+      font-weight: 300;
+    }
+
+    .faq-mini details[open] summary::after {
+      content: "−";
+    }
+
+    .faq-mini p {
+      padding: 0.6rem 0 0.2rem;
+      font-size: 0.95rem;
+      color: #254c5b;
+    }
+
+    /* ---------- 底部链接 ---------- */
+    .footer-links {
+      margin-top: 3.5rem;
+      padding-top: 1.8rem;
+      border-top: 2px solid #c7e2ed;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2.5rem;
+      align-items: baseline;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .footer-links a {
+      color: #0b5f6e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted transparent;
+      transition: border-color 0.2s;
+    }
+
+    .footer-links a:hover {
+      border-color: #1d7b8c;
+    }
+
+    .footer-links .main-link {
+      background: #1d7b8c;
+      color: white;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      border-bottom: none;
+    }
+
+    .footer-links .main-link:hover {
+      background: #146b7a;
+    }
+
+    .footer-note {
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      color: #5b7b88;
+    }
+
+    /* ---------- 响应式微调 ---------- */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section-title {
+        font-size: 1.35rem;
+      }
+      .explain-block {
+        padding: 1.4rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- hero 区 -->
+    <section class="hero">
+      <h1>日常检索 · <span>PG娱乐</span> 信息参照</h1>
+      <p>从查询、对照到延伸阅读，为有兴趣了解 PG娱乐 的朋友提供结构清晰的参考页。基于公开信息与常见场景整理，保持中立与简洁。</p>
+      <div class="tagline">查询参考 · 功能概述 · 常见问题</div>
+    </section>
+
+    <!-- 优势/特点区 网格卡片 -->
+    <h2 class="section-title">场景与对照</h2>
+    <div class="grid-cards">
+      <div class="card">
+        <div class="icon">📋</div>
+        <h3>快速查询结构</h3>
+        <p>页面采用分层卡片，适合对照查看功能模块、分类说明与常用名词解释，减少翻页成本。</p>
+        <span class="badge">对照阅读</span>
+      </div>
+      <div class="card">
+        <div class="icon">📎</div>
+        <h3>延伸参考入口</h3>
+        <p>底部设有指向 <a href="https://main-pgyule.com" style="color:#1d7b8c; text-decoration:underline; font-weight:500;">PG娱乐</a> 的链接，方便有进一步查询需求的用户自行展开。</p>
+        <span class="badge">一站直达</span>
+      </div>
+      <div class="card">
+        <div class="icon">🧩</div>
+        <h3>移动端适配</h3>
+        <p>网格卡片与折叠 FAQ 在手机、平板、桌面均保持良好间距与可读性，信息密度适中。</p>
+        <span class="badge">响应式</span>
+      </div>
+      <div class="card">
+        <div class="icon">📌</div>
+        <h3>FAQ 摘要式铺垫</h3>
+        <p>常见问题采用 details/summary，方便展开与收起，内容聚焦于实际使用中的典型疑问。</p>
+        <span class="badge">折叠结构</span>
+      </div>
+      <div class="card">
+        <div class="icon">🔍</div>
+        <h3>关键词索引</h3>
+        <p>页面内嵌 PG娱乐 相关概念、操作环节提示，适合作为快速浏览或知识补全的起点。</p>
+        <span class="badge">信息密度</span>
+      </div>
+      <div class="card">
+        <div class="icon">⚖️</div>
+        <h3>克制的语气</h3>
+        <p>不夸大、不诱导，以“可参考”“可查询”为基调，符合信息页面的专业调性。</p>
+        <span class="badge">专业风格</span>
+      </div>
+    </div>
+
+    <!-- 说明区 双栏对照 -->
+    <div class="explain-block">
+      <div class="explain-item">
+        <h4>📘 日常查询场景</h4>
+        <ul>
+          <li>快速核对功能名称与对应模块</li>
+          <li>对照不同分类下的说明条目</li>
+          <li>在移动设备上纵向浏览卡片布局</li>
+          <li>利用折叠 FAQ 查找简短答案</li>
+        </ul>
+      </div>
+      <div class="explain-item">
+        <h4>📗 延伸阅读建议</h4>
+        <ul>
+          <li>通过底部链接进一步了解 <a href="https://main-pgyule.com" style="color:#1d7b8c; text-decoration:underline; font-weight:500;">PG娱乐</a> 的更多信息</li>
+          <li>结合自身需求筛选卡片中的参考要点</li>
+          <li>将页面作为笔记或知识整理的辅助工具</li>
+          <li>多次访问以加深对分类结构的印象</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2 class="section-title">FAQ 摘要</h2>
+    <div class="faq-mini">
+      <details>
+        <summary>PG娱乐 页面主要提供什么内容？</summary>
+        <p>本页作为查询与参考入口，围绕 PG娱乐 展示结构化卡片、常见问题摘要及链接指引。不替代官方信息，仅作整理与对照使用。</p>
+      </details>
+      <details>
+        <summary>如何获取更全面的信息？</summary>
+        <p>页面底部包含指向 <a href="https://main-pgyule.com" style="color:#1d7b8c; text-decoration:underline;">PG娱乐</a> 的链接，访问后可查看更完整的内容与功能说明。</p>
+      </details>
+      <details>
+        <summary>移动端阅读体验如何？</summary>
+        <p>采用网格卡片 + 响应式设计，在小屏幕上卡片自动单列，FAQ 可折叠，确保文字清晰、触控友好。</p>
+      </details>
+    </div>
+
+    <!-- 底部链接 -->
+    <footer class="footer-links">
+      <span>信息参考：</span>
+      <a href="https://main-pgyule.com" class="main-link">PG娱乐</a>
+      <a href="#">使用说明</a>
+      <a href="#">常见对照</a>
+      <a href="#">延伸阅读</a>
+      <div class="footer-note">基于公开信息整理 · 仅供查询参考 · 内容定期更新</div>
+    </footer>
+
+  </div>
+</body>
+</html>
